@@ -56,15 +56,15 @@ void Setup(AlxWindow* w){
 	);
 	world.normal = WORLD3D_NORMAL_CAP;
 
-	//Mesh_Read(&world.trisIn,"./data/teapot.obj");
-
-	for(int i = 0;i<10;i++){
-		for(int j = 0;j<10;j++){
-			for(int k = 0;k<10;k++){
-				Lib3D_Cube(&world.trisIn,(Vec3D){ k * 2,j * 2,i * 2,1.0f },(Vec3D){ 1.0f,1.0f,1.0f,1.0f },WHITE,WHITE);
-			}
-		}
-	}
+	Mesh_Read(&world.trisIn,"./data/teapot.obj");
+	//for(int i = 0;i<10;i++){
+	//	for(int j = 0;j<10;j++){
+	//		for(int k = 0;k<10;k++){
+	//			Lib3D_Cube(&world.trisIn,(Vec3D){ k * 2,j * 2,i * 2,1.0f },(Vec3D){ 1.0f,1.0f,1.0f,1.0f },WHITE,WHITE);
+	//		}
+	//	}
+	//}
+	
 	Mesh_Shade(&world.trisIn,(Vec3D){ 0.5f,0.4f,0.6f,1.0f });
 
 	PoolMode = 0;
@@ -147,7 +147,7 @@ void Update(AlxWindow* w){
 	// String str = String_Format("X: %f, Y: %f, Z: %f",cam.p.x,cam.p.y,cam.p.z);
 	// RenderCStrSize(str.Memory,str.size,0,0,RED);
 	// String_Free(&str);
-	String str = String_Format("SizeIn: %d, SizeBuff: %d, SizeOut: %d",world.trisIn.size,world.trisBuff.size,world.trisOut.size);
+	String str = String_Format("SizeIn: %d, SizeBuff: %d, SizeOut: %d",(Number)world.trisIn.size,(Number)world.trisBuff.size,(Number)world.trisOut.size);
 	RenderCStrSize(str.Memory,str.size,0,window.AlxFont.CharSizeY + 1,RED);
 	String_Free(&str);
 }
