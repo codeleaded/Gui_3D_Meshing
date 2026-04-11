@@ -57,6 +57,8 @@ void Setup(AlxWindow* w){
 	world.normal = WORLD3D_NORMAL_CAP;
 
 	Mesh_Read(&world.trisIn,"./data/teapot.obj");
+	//Mesh_Read(&world.trisIn,"./data/axis.obj");
+
 	//for(int i = 0;i<10;i++){
 	//	for(int j = 0;j<10;j++){
 	//		for(int k = 0;k<10;k++){
