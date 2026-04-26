@@ -1,193 +1,88 @@
-# Gui_3D_Meshing
+# Project README
 
+## Overview
+This project is a 3D meshing application written in C. The application uses advanced graphics libraries and algorithms to render 3D meshes on various platforms, including Linux, Windows, WebAssembly (using Emscripten), and Wine.
 
-## Project Overview
+## Features
+- Real-time rendering of 3D meshes.
+- Support for importing and exporting various mesh formats.
+- Cross-platform compatibility: runs on Linux, Windows, WebAssembly, and Wine.
+- Debugging capabilities using GCC and GDB.
 
-This project implements specialized functionality related to 3d_meshing.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for 3d_meshing
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed for specific platforms:
+  - Linux: X11, PNG, JPEG
+  - Windows: WINAPI
+  - WebAssembly: Emscripten
+  - Wine: MinGW-w64
 
-### Build Steps
+## Build & Run
+### Building on Linux
+To build and run the project on a Linux system:
 
-1. Navigate to project directory:
 ```bash
-cd Gui_3D_Meshing
+cd /path/to/Gui_3D_Meshing
+make -f Makefile.linux all
 ```
 
-2. Build the project:
+To clean the build artifacts and rebuild:
+
 ```bash
-make -f Makefile.(os) all
+make -f Makefile.linux clean
+make -f Makefile.linux all
 ```
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+### Building on Windows
+To build and run the project on a Windows system:
+
+```cmd
+cd /path/to/Gui_3D_Meshing
+make -f Makefile.windows all
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
+To clean the build artifacts and rebuild:
+
+```cmd
+make -f Makefile.windows clean
+make -f Makefile.windows all
+```
+
+### Building for WebAssembly
+To build and run the project for web using Emscripten:
+
 ```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
+cd /path/to/Gui_3D_Meshing
+emmake make -f Makefile.web all
+```
+
+To run the WebAssembly application locally:
+
+```bash
+emrun --no_browser --port 8080 ./build/index.html
+```
+
+### Building for Wine
+To build and run the project on a Linux system using Wine:
+
+```bash
+cd /path/to/Gui_3D_Meshing
+make -f Makefile.wine all
+```
+
+To clean the build artifacts and rebuild:
+
+```bash
+make -f Makefile.wine clean
+make -f Makefile.wine all
 ```
 
 ### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Gui_3D_Meshing/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+- `all`: Build the output executable.
+- `do`: Build the project and execute the output.
+- `clean`: Remove all build artifacts.
+- `exe`: Execute the built application.
