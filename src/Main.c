@@ -150,7 +150,7 @@ void Update(AlxWindow* w){
 	// RenderCStrSize(str.Memory,str.size,0,0,RED);
 	// String_Free(&str);
 	String str = String_Format("SizeIn: %d, SizeBuff: %d, SizeOut: %d",(Number)world.trisIn.size,(Number)world.trisBuff.size,(Number)world.trisOut.size);
-	RenderCStrSize(str.Memory,str.size,0,window.AlxFont.CharSizeY + 1,RED);
+	RenderCStrSize(str.Memory,str.size,0,window.font.CharSizeY + 1,RED);
 	String_Free(&str);
 }
 
