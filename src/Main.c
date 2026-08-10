@@ -36,7 +36,7 @@ void Setup(AlxWindow* w){
 	Menu_Set(1);
 
 	Random_Set(Time_Nano());
-	Random_Get(6969);
+	//Random_Get();
 
 	FunctionOrigin = (Vec2){ 0.0f,0.0f };
 	FunctionAngle = (Vec3D){ 0.0f,0.0f,0.0f,1.0f };
